@@ -1,1 +1,1 @@
-# meta-mw320-fc
+# meta-fc
