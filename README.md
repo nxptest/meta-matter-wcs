@@ -39,7 +39,7 @@ Run the commands below to download this release:
 Then integrate the meta-matter recipe into the Yocto code base
 
     $ cd ${MY_YOCTO}/sources/
-    $ git clone https://github.com/NXPmicro/meta-matter.git
+    $ git clone https://github.com/nxptest/meta-matter-wcs.git
 
 To build the Yocto Project, some packages need to be installed. The list of packages required are:
 
@@ -52,7 +52,7 @@ More information about the downloaded Yocto release can be found in the correspo
 
 Change the current directory to the top directory of the Yocto source code and execute the commands below to generate the Yocto images.
 
-    $MACHINE=imx8mmevk DISTRO=fsl-imx-xwayland source sources/meta-matter/tools/imx-iot-setup.sh bld-xwayland
+    $MACHINE=imx8mmevk DISTRO=fsl-imx-xwayland source sources/meta-matter-wcs/tools/imx-iot-setup.sh bld-xwayland
     $bitbake imx-image-multimedia
 
 After execution of previous two commands, the Yocto images will be generated under ${MY_YOCTO}/bld-xwayland/tmp/deploy/images/imx8mmevk/imx-image-multimedia-imx8mmevk.wic.bz2. The bzip2 command should be used to unzip this file then the dd command should be used to program the output file to a microSD card by running the commands below. Then a microSD card can be used
