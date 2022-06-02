@@ -4,7 +4,7 @@ This repo contains the i.MX MPU project Matter related Yocto recipes. Below is a
  - OpenThread Daemon: https://github.com/openthread/openthread
  - OpenThread Border Router: https://github.com/openthread/ot-br-posix
 
-All the software components revision are based on [project Matter TE8/RC3](https://github.com/project-chip/connectedhomeip/commits/TE8/rc3).
+All the software components revision are based on [project Matter TE9](https://github.com/project-chip/connectedhomeip/commits/TE9).
 
 The the Following Matter related binaries will be installed into the Yocto image root filesystem with this recipe repo:
  - chip-lighting-app: Matter lighting app demo
