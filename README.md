@@ -66,7 +66,7 @@ The Universal Update Utility (UUU) is used to download images to different devic
 
 UUU should be used to program the output files to eMMC by running the commands below.
 
-    $ uuu -b emmc_all imx-boot-imx8mmevk-sd.bin-flash_evk imx-image-multimedia-imx8mmevk.wic.bz2
+    $ sudo uuu -b emmc_all imx-boot-imx8mmevk-sd.bin-flash_evk imx-image-multimedia-imx8mmevk.wic.bz2
 
 # How to build OpenThread Border Router with Yocto SDK
 There are 3 module for OpenThread Border Router (OTBR): otbr-agent, ot-ctl and otbr-web. The otbr-web need liboost static and jsoncpp modules which are not included into default built Yocto images.
@@ -127,9 +127,3 @@ When using the NXP K32W0 USB module, programmed with OpenThread Spinel firmware 
     $iptables -A FORWARD -i mlan0 -o wpan0 -j ACCEPT
     $iptables -A FORWARD -i wpan0 -o mlan0 -j ACCEPT
     $otbr-web &
-
-# How to build Matter application
-
-A document described how to build Matter application for i.MX platforms can be found in [Matter community](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/nxp_imx8m_linux_examples.md).
-
-A Matter official document about how to use chip-tool as Matter controller can be found in [here](https://github.com/project-chip/connectedhomeip/blob/TE8/rc3/examples/chip-tool/README.md).
