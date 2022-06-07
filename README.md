@@ -11,6 +11,10 @@ The the Following Matter related binaries will be installed into the Yocto image
  - ot-client-ctl: OpenThread ctrl tool for OpenThread client using OpenThread v1.2 spec (For IW612)
  - otbr-agent: OpenThread Border Router agent using OpenThread v1.2 spec (For IW612)
  - ot-ctl: OpenThread Border Router ctrl tool using OpenThread v1.2 spec (For IW612)
+ - ot-daemon-v11: OpenThread Daemon for OpenThread client using OpenThread v1.1 spec (For K32W RCP Module)
+ - ot-client-ctl-v11: OpenThread Daemon for OpenThread client using OpenThread v1.1 spec (For K32W RCP Module)
+ - otbr-agent-v11: OpenThread Border Router agent using OpenThread v1.1 spec (For K32W RCP Module)
+ - ot-ctl-v11: OpenThread Border Router ctrl tool using OpenThread v1.1 spec (For K32W RCP Module)
  - otbr-web: OpenThread Border Router web management daemon
 
 # How to build the Yocto image with integrated OpenThread Border Router
