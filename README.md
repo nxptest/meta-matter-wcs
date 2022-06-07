@@ -52,16 +52,21 @@ More information about the downloaded Yocto release can be found in the correspo
 
 Change the current directory to the top directory of the Yocto source code and execute the commands below to generate the Yocto images.
 
-    $MACHINE=imx8mmevk DISTRO=fsl-imx-xwayland source sources/meta-matter-wcs/tools/imx-iot-setup.sh bld-xwayland
-    $bitbake imx-image-multimedia
+    $ MACHINE=imx8mmevk DISTRO=fsl-imx-xwayland source sources/meta-matter-wcs/tools/imx-iot-setup.sh bld-xwayland
+    $ bitbake imx-image-multimedia
 
-After execution of previous two commands, the Yocto images will be generated under ${MY_YOCTO}/bld-xwayland/tmp/deploy/images/imx8mmevk/imx-image-multimedia-imx8mmevk.wic.bz2. The bzip2 command should be used to unzip this file then the dd command should be used to program the output file to a microSD card by running the commands below. Then a microSD card can be used
-to boot the image of an i.MX 8M Mini EVK.
+After execution of previous two commands, the Yocto images will be generated under directory ${MY_YOCTO}/bld-xwayland/tmp/deploy/images/imx8mmevk: imx-boot-imx8mmevk-sd.bin-flash_evk and imx-image-multimedia-imx8mmevk.wic.bz2.
 
-___Be cautious when executing the dd command below, make sure the of represents the microSD card device!, /dev/sdc in the command below represents a microSD card connected to the host machine with a USB adapter, however the output device name may vary. Use the command "ls /dev/sd*" to verify the name of the SD card device.___
+The Universal Update Utility (UUU) is used to download images to different devices on an i.MX board. Download UUU version 1.4.193 or later from https://github.com/NXPmicro/mfgtools/releases and execute the commands below to build it.
 
-    $ bzip2 -d imx-image-multimedia-imx8mmevk.wic.bz2
-    $ sudo dd if=imx-image-multimedia-imx8mmevk.wic of=/dev/sdc bs=4M conv=fsync
+    $ tar xvf uuu_source-1.4.193.tar.gz
+    $ cd uuu-1.4.193
+    $ cmake .
+    $ make
+
+UUU should be used to program the output files to eMMC by running the commands below.
+
+    $ uuu -b emmc_all imx-boot-imx8mmevk-sd.bin-flash_evk imx-image-multimedia-imx8mmevk.wic.bz2
 
 # How to build OpenThread Border Router with Yocto SDK
 There are 3 module for OpenThread Border Router (OTBR): otbr-agent, ot-ctl and otbr-web. The otbr-web need liboost static and jsoncpp modules which are not included into default built Yocto images.
